@@ -2,7 +2,7 @@
 
 This API serves as a source for all quotes that were said by Trump or not. 
 
-*It's pretty strighforward:* the API returns quotes with **(string) statement** and **(boolean) is_valid**. The statements are quotes and the is_valid boolean flag indicates whether the quote was said by Trump or not.
+*It's pretty strighforward:* the API returns quotes with (string) **statement** and (boolean) **is_valid**. The statements are quotes and the is_valid boolean flag indicates whether the quote was said by Trump or not.
 
 # How to use it
 
@@ -12,13 +12,16 @@ This API serves as a source for all quotes that were said by Trump or not.
 
 * **Base URL**
 
-  http://localhost:3000/api/v1/quotes/all
+  * **url:** https://trump-quote.herokuapp.com/api/v1/quotes/all <br />
+    **description:** returns all quotes in the database
 
 *  **Specific URL's**
 
-  api/v1/quotes/true
+  * **url:** https://trump-quote.herokuapp.com/api/v1/quotes/true <br />
+    **description:** returns only quotes that trump has said *(is_valid: true)*
   
-  api/v1/quotes/false
+  * **url:** https://trump-quote.herokuapp.com/api/v1/quotes/false <br />
+    **description:** returns only quotes that trump has not said *(is_valid: false)*
 
 * **Success Response:**
 
@@ -32,7 +35,7 @@ This API serves as a source for all quotes that were said by Trump or not.
 
 # Sample Call
   
-  * **url:** http://localhost:3000/api/v1/quotes/true <br />
+  * **url:** https://trump-quote.herokuapp.com/api/v1/quotes/true <br />
     **response:**
 ```javascript
 {
