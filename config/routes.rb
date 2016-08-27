@@ -6,7 +6,8 @@ Rails.application.routes.draw do
       get '/quotes/true' => 'quotes#filter_true'
       get '/quotes/false' => 'quotes#filter_false'
 
-      resources :quotes, only: [:show]
+      get '*path', to: 'quotes#catch_all'
     end
   end
+  get '*path', to: 'application#catch_all'
 end

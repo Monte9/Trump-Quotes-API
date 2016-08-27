@@ -4,4 +4,10 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :null_session
 
   include ActionController::MimeResponds
+
+  def catch_all
+    response = { :status => 400, :content => "Bad Request" }
+    render json: response
+  end
+
 end
