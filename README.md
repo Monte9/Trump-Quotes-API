@@ -1,10 +1,8 @@
-****
-----
 # Trump Quotes API
 
 This API serves as a source for all quotes that were said by Trump or not. 
 
-*It's pretty strighforward:* the API returns quotes with **(string)statement** and **(boolean)is_valid**. The statements are quotes and the is_valid boolean flag indicates whether the quote was said by Trump or not.
+*It's pretty strighforward:* the API returns quotes with **(string) statement** and **(boolean) is_valid**. The statements are quotes and the is_valid boolean flag indicates whether the quote was said by Trump or not.
 
 # How to use it
 
@@ -25,42 +23,31 @@ This API serves as a source for all quotes that were said by Trump or not.
 * **Success Response:**
 
   * **status:** 200 <br />
-    **content:** 
-```javascript
-{ id: 1,
-statement: "You know, it really doesn’t matter what the media write as long as you’ve got a young, and beautiful, piece of ass.",
-is_valid: true,
-created_at: "2016-08-27T06:31:53.152Z",
-updated_at: "2016-08-27T06:31:53.152Z" }
-```
-
-
+    **content:** `{ statement: "My message isn't perfectly defined. I have, as a human being, fallen to peer pressure.", is_valid: false }`
 
 * **Error Response:**
 
-  * **Code:** 404 NOT FOUND <br />
-    **Content:** ````{ error : "User doesn't exist" }
-sdf
-Sdf <br />
-sdf````
+  * **status:** 400 <br />
+    **content:** `"Bad Request"`
 
-  OR
-
-  * **Code:** 401 UNAUTHORIZED <br />
-    **Content:** `{ error : "You are unauthorized to make this request." }`
-
-* **Sample Call:**
-
-  ```javascript
-    $.ajax({
-      url: "/users/1",
-      dataType: "json",
-      type : "GET",
-      success : function(r) {
-        console.log(r);
-      }
-    });
-  ```
+# Sample Call
+  
+  * **url:** http://localhost:3000/api/v1/quotes/true <br />
+    **response:**
+```javascript
+{
+    status: 200,
+    content: [
+        {
+            id: 1,
+            statement: "You know, it really doesn’t matter what the media write as long as you’ve got a young, and beautiful, piece of ass.",
+            is_valid: true,
+            created_at: "2016-08-27T06:31:53.152Z",
+            updated_at: "2016-08-27T06:31:53.152Z"
+        }
+    ]
+}
+```
   
 # Use Cases
 
@@ -68,4 +55,4 @@ sdf````
 
 # About
 
-This API is mainted by @monte9. Feel free to submit a PR or raise issues.
+This API is maintained by [Monte Thakkar](https://github.com/monte9/). Feel free to submit a PR or raise an issue.
